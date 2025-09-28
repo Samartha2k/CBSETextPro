@@ -56,7 +56,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background:
+            background: 
                 radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
@@ -69,7 +69,6 @@
             padding: 12px;
         }
 
-        /* Mobile-first layout */
         .main-layout {
             background: var(--glass);
             backdrop-filter: blur(20px);
@@ -82,7 +81,6 @@
             flex-direction: column;
         }
 
-        /* Desktop layout */
         @media (min-width: 1024px) {
             .app-container {
                 min-height: 100vh;
@@ -91,7 +89,7 @@
                 justify-content: center;
                 padding: 20px;
             }
-
+            
             .main-layout {
                 max-width: 1400px;
                 display: grid;
@@ -248,7 +246,6 @@
             }
         }
 
-        /* Preview Sidebar - Desktop Only */
         .preview-sidebar {
             background: var(--surface);
             border-left: 1px solid var(--border);
@@ -702,31 +699,6 @@
             }
         }
 
-        .color-input {
-            width: 40px;
-            height: 40px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            border: 2px solid var(--border);
-            align-self: center;
-            transition: transform 0.2s ease;
-        }
-
-        @media (min-width: 768px) {
-            .color-input {
-                width: 48px;
-                height: 48px;
-                border-radius: 12px;
-            }
-        }
-
-        .color-input:hover {
-            transform: scale(1.05);
-        }
-
-        /* Mobile-optimized modal */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -768,7 +740,7 @@
                 align-items: center;
                 padding: 20px;
             }
-
+            
             .crop-modal {
                 border-radius: 24px;
                 padding: 32px;
@@ -1002,7 +974,6 @@
             }
         }
 
-        /* Mobile-specific button sizing in crop modal */
         .crop-controls .btn {
             width: calc(50% - 4px);
             min-width: auto;
@@ -1064,7 +1035,7 @@
             .btn-primary {
                 box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
             }
-
+            
             .btn-primary:hover {
                 transform: translateY(-3px);
                 box-shadow: 0 12px 40px rgba(99, 102, 241, 0.4);
@@ -1087,7 +1058,7 @@
             .btn-success {
                 box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);
             }
-
+            
             .btn-success:hover {
                 transform: translateY(-3px);
                 box-shadow: 0 12px 40px rgba(16, 185, 129, 0.4);
@@ -1110,7 +1081,7 @@
             .btn-warning {
                 box-shadow: 0 8px 32px rgba(6, 182, 212, 0.3);
             }
-
+            
             .btn-warning:hover {
                 transform: translateY(-3px);
                 box-shadow: 0 12px 40px rgba(6, 182, 212, 0.4);
@@ -1134,7 +1105,7 @@
             .btn-secondary {
                 box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
             }
-
+            
             .btn-secondary:hover {
                 transform: translateY(-2px);
                 box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -1156,14 +1127,13 @@
             .btn-danger {
                 box-shadow: 0 8px 32px rgba(239, 68, 68, 0.3);
             }
-
+            
             .btn-danger:hover {
                 transform: translateY(-3px);
                 box-shadow: 0 12px 40px rgba(239, 68, 68, 0.4);
             }
         }
 
-        /* Footer branding */
         .footer-brand {
             text-align: center;
             padding: 16px;
@@ -1198,7 +1168,6 @@
             background-clip: text;
         }
 
-        /* Cropper customization */
         .cropper-container {
             border-radius: 12px !important;
         }
@@ -1246,7 +1215,6 @@
             }
         }
 
-        /* Success animations */
         @keyframes successPulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
@@ -1257,7 +1225,6 @@
             animation: successPulse 0.6s ease-in-out;
         }
 
-        /* Mobile safe areas */
         @supports (padding: max(0px)) {
             .app-container {
                 padding-left: max(12px, env(safe-area-inset-left));
@@ -1270,7 +1237,6 @@
             }
         }
 
-        /* Prevent zoom on input focus (iOS) */
         @media screen and (-webkit-min-device-pixel-ratio: 0) {
             .form-input {
                 font-size: 16px;
@@ -1319,20 +1285,17 @@
                         <h3 class="controls-title">✨ Customize Text</h3>
                         <div class="controls-grid">
                             <div class="control-group">
-                                <label class="control-label">Font Size</label>
-                                <input type="range" id="fontSizeRange" class="range-input" min="12" max="48" value="24">
-                                <span id="fontSizeValue" class="range-value">24px</span>
+                                <label class="control-label">Name Size</label>
+                                <input type="range" id="nameFontSizeRange" class="range-input" min="12" max="48" value="24">
+                                <span id="nameFontSizeValue" class="range-value">24px</span>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">Text Color</label>
-                                <input type="color" id="textColorPicker" class="color-input" value="#000000">
+                                <label class="control-label">Date Size</label>
+                                <input type="range" id="dateFontSizeRange" class="range-input" min="12" max="48" value="24">
+                                <span id="dateFontSizeValue" class="range-value">24px</span>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">Background</label>
-                                <input type="color" id="bgColorPicker" class="color-input" value="#ffffff">
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label">Position</label>
+                                <label class="control-label">Text Position</label>
                                 <input type="range" id="textPositionRange" class="range-input" min="0" max="100" value="50">
                                 <span id="textPositionValue" class="range-value">50%</span>
                             </div>
@@ -1373,7 +1336,7 @@
 
                 <div class="preview-info">
                     <div class="info-item">
-                        <span class="info-label">📐 Size</span>
+                        <span class="info-label">📏 Size</span>
                         <span class="info-value">3.5 × 4.5 cm</span>
                     </div>
                     <div class="info-item">
@@ -1393,7 +1356,7 @@
         </div>
     </div>
 
-    <!-- Mobile-optimized Crop Modal -->
+    <!-- Crop Modal -->
     <div class="modal-overlay" id="cropModal">
         <div class="crop-modal">
             <div class="crop-modal-header">
@@ -1417,7 +1380,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
     <script>
-        // Same JavaScript as before, but with mobile optimizations
         let uploadedImage = null;
         let cropper = null;
         let cropMode = false;
@@ -1457,16 +1419,17 @@
             }
         });
 
-        document.getElementById('fontSizeRange').addEventListener('input', updateControls);
-        document.getElementById('textColorPicker').addEventListener('input', updateControls);
-        document.getElementById('bgColorPicker').addEventListener('input', updateControls);
+        document.getElementById('nameFontSizeRange').addEventListener('input', updateControls);
+        document.getElementById('dateFontSizeRange').addEventListener('input', updateControls);
         document.getElementById('textPositionRange').addEventListener('input', updateControls);
 
         function updateControls() {
-            const fontSize = document.getElementById('fontSizeRange').value;
+            const nameFontSize = document.getElementById('nameFontSizeRange').value;
+            const dateFontSize = document.getElementById('dateFontSizeRange').value;
             const textPosition = document.getElementById('textPositionRange').value;
 
-            document.getElementById('fontSizeValue').textContent = fontSize + 'px';
+            document.getElementById('nameFontSizeValue').textContent = nameFontSize + 'px';
+            document.getElementById('dateFontSizeValue').textContent = dateFontSize + 'px';
             document.getElementById('textPositionValue').textContent = textPosition + '%';
 
             if (canGeneratePhoto()) {
@@ -1545,16 +1508,15 @@
             const name = document.getElementById('nameInput').value.trim().toUpperCase();
             const date = document.getElementById('dateInput').value.trim().toUpperCase();
 
-            const fontSize = parseInt(document.getElementById('fontSizeRange').value);
-            const textColor = document.getElementById('textColorPicker').value;
-            const bgColor = document.getElementById('bgColorPicker').value;
+            const nameFontSize = parseInt(document.getElementById('nameFontSizeRange').value);
+            const dateFontSize = parseInt(document.getElementById('dateFontSizeRange').value);
             const textPosition = parseInt(document.getElementById('textPositionRange').value);
 
             const canvasWidth = Math.round(CBSE_WIDTH_CM * CM_TO_PX);
             const canvasHeight = Math.round(CBSE_HEIGHT_CM * CM_TO_PX);
 
-            updateCanvasHighQuality(canvas, ctx, canvasWidth, canvasHeight, name, date, fontSize, textColor, bgColor, textPosition);
-            updateCanvasHighQuality(sidebarCanvas, sidebarCtx, canvasWidth, canvasHeight, name, date, fontSize, textColor, bgColor, textPosition);
+            updateCanvasHighQuality(canvas, ctx, canvasWidth, canvasHeight, name, date, nameFontSize, dateFontSize, textPosition);
+            updateCanvasHighQuality(sidebarCanvas, sidebarCtx, canvasWidth, canvasHeight, name, date, nameFontSize, dateFontSize, textPosition);
 
             canvas.style.display = 'block';
             sidebarCanvas.style.display = 'block';
@@ -1566,14 +1528,15 @@
             updatePreviewStatus('Generated');
         }
 
-        function updateCanvasHighQuality(targetCanvas, targetCtx, canvasWidth, canvasHeight, name, date, fontSize, textColor, bgColor, textPosition) {
+        function updateCanvasHighQuality(targetCanvas, targetCtx, canvasWidth, canvasHeight, name, date, nameFontSize, dateFontSize, textPosition) {
             targetCanvas.width = canvasWidth;
             targetCanvas.height = canvasHeight;
 
             targetCtx.imageSmoothingEnabled = true;
             targetCtx.imageSmoothingQuality = 'high';
 
-            targetCtx.fillStyle = bgColor;
+            // White background
+            targetCtx.fillStyle = '#ffffff';
             targetCtx.fillRect(0, 0, canvasWidth, canvasHeight);
 
             const textAreaHeight = Math.round(canvasHeight * 0.15);
@@ -1601,24 +1564,28 @@
                 targetCtx.restore();
             }
 
-            const scaledFontSize = Math.round(fontSize * (canvasWidth / 400));
-            targetCtx.font = `bold ${scaledFontSize}px Inter, Arial, sans-serif`;
-            targetCtx.fillStyle = textColor;
+            // Draw text with separate font sizes
+            const scaledNameFontSize = Math.round(nameFontSize * (canvasWidth / 400));
+            const scaledDateFontSize = Math.round(dateFontSize * (canvasWidth / 400));
+
+            targetCtx.fillStyle = '#000000';
             targetCtx.textAlign = 'center';
             targetCtx.textBaseline = 'middle';
 
             const textAreaStart = photoHeight;
             const textY = textAreaStart + (textAreaHeight * textPosition / 100);
             const centerX = canvasWidth / 2;
-            const lineSpacing = scaledFontSize + 8;
 
             targetCtx.shadowColor = 'rgba(0,0,0,0.1)';
             targetCtx.shadowBlur = 2;
             targetCtx.shadowOffsetX = 1;
             targetCtx.shadowOffsetY = 1;
 
-            targetCtx.fillText(name, centerX, textY);
-            targetCtx.fillText(date, centerX, textY + lineSpacing);
+            targetCtx.font = `bold ${scaledNameFontSize}px Inter, Arial, sans-serif`;
+            targetCtx.fillText(name, centerX, textY - scaledDateFontSize/2);
+
+            targetCtx.font = `bold ${scaledDateFontSize}px Inter, Arial, sans-serif`;
+            targetCtx.fillText(date, centerX, textY + scaledNameFontSize/2);
 
             targetCtx.shadowColor = 'transparent';
             targetCtx.shadowBlur = 0;
@@ -1636,9 +1603,7 @@
             cropModal.classList.add('active');
             updatePreviewStatus('Cropping...');
 
-            // Prevent body scroll on mobile
             document.body.style.overflow = 'hidden';
-
             setupCropper();
         }
 
@@ -1654,7 +1619,6 @@
                     cropper.destroy();
                 }
 
-                // Mobile-optimized cropper settings
                 cropper = new Cropper(cropImage, {
                     aspectRatio: actualAspectRatio,
                     viewMode: 1,
@@ -1672,7 +1636,6 @@
                     responsive: true,
                     minContainerWidth: 200,
                     minContainerHeight: 150,
-                    // Mobile touch optimizations
                     scalable: true,
                     zoomable: true,
                     zoomOnTouch: true,
@@ -1716,8 +1679,6 @@
         function cancelCrop() {
             const cropModal = document.getElementById('cropModal');
             cropModal.classList.remove('active');
-
-            // Restore body scroll
             document.body.style.overflow = '';
 
             if (cropper) {
@@ -1776,7 +1737,7 @@
             }
         }
 
-        // Mobile-optimized input handlers
+        // Input handlers
         document.getElementById('nameInput').addEventListener('input', function(e) {
             e.target.value = e.target.value.toUpperCase();
             clearTimeout(this.timeout);
@@ -1784,7 +1745,7 @@
                 if (canGeneratePhoto()) {
                     generatePhotoSafe();
                 }
-            }, 500); // Longer debounce for mobile
+            }, 500);
         });
 
         document.getElementById('dateInput').addEventListener('input', function(e) {
@@ -1797,7 +1758,7 @@
             }, 500);
         });
 
-        // Close modal when clicking outside
+        // Close modals when clicking outside
         document.getElementById('cropModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 cancelCrop();
